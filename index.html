@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Meghana KB | Dermatologist</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #e74c3c;
+            --text-color: #333;
+            --bg-light: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+        /* Fully Transparent Navigation */
+        header {
+            background-color: transparent;
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.6rem 1rem;
+            transition: all 0.3s;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+        nav a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* FULL-WIDTH BACKDROP */
+        .hero-backdrop {
+            height: 580px;
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                        url('Header.jpeg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 75px;
+        }
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
+        }
+        .hero-content h1 {
+            font-size: 3.3rem;
+            margin: 0 0 12px 0;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.7);
+        }
+        .hero-content .subtitle {
+            font-size: 1.55rem;
+            color: #ffd7d7;
+            margin-bottom: 15px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 10px;
+            margin-bottom: 1.5rem;
+        }
+        .profile-img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #e9ecef;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .thought-box {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-left: 4px solid var(--secondary-color);
+        }
+        footer {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-backdrop {
+                height: 460px;
+                margin-top: 65px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation with /dermatology prefix -->
+    <header>
+        <nav>
+            <a href="/dermatology/#about">About Me</a>
+            <a href="/dermatology/#education">Education & Achievements</a>
+            <a href="/dermatology/#publications">Publications</a>
+            <a href="/dermatology/#current-work">Current Work</a>
+            <a href="/dermatology/#insights">Latest Thoughts</a>
+        </nav>
+    </header>
+
+    <!-- FULL-WIDTH BACKDROP IMAGE -->
+    <section class="hero-backdrop">
+        <div class="hero-content">
+            <h1>Dr. Meghana KB</h1>
+            <p class="subtitle">Consultant Dermatologist & Skin Specialist</p>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- About Section - Photo on RIGHT SIDE -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div style="display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;">
+                <!-- Text on Left -->
+                <div style="flex: 2; min-width: 300px;">
+                    <p>Welcome to my professional profile. With extensive experience in clinical and cosmetic dermatology, I am committed to delivering personalized care using the latest advancements in dermatological science.</p>
+                    <p><strong>Contact:</strong> dr.meghanakb@gmail.com | <strong>Clinic:</strong> Shree Health Care Centre, Bengaluru</p>
+                </div>
+                
+                <!-- Photo on Right -->
+                <div style="flex: 1; min-width: 250px; text-align: center; order: 2;">
+                    <img src="Dr Meghana Photo.jpg" alt="Dr. Meghana KB" class="profile-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education & Achievements</h2>
+            <h3>Education & Training</h3>
+            <ul>
+                <li><strong>Fellowship in Dermatosurgery</strong> – Bangalore Medical College and Research Institute (BMCRI), Bangalore (2026)</li>
+                <li><strong>Residency in Dermatology</strong> – Post Graduate Institute of Medical Education & Research (PGIMER), Chandigarh (2025)</li>
+                <li><strong>MBBS</strong> – JJM Medical College (RGUHS), Davangere (2014)</li>
+            </ul>
+            
+            <h3>Key Achievements</h3>
+            <ul>
+                <li>Member of Indian Association of Dermatologists, Venereologists and Leprologists (IADVL)</li>
+                <li>Presented research papers at national and state dermatology conferences</li>
+                <li>Special interest in Acne, Pigmentation, and Hair Disorders</li>
+            </ul>
+        </section>
+
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <p>A selection of research papers and contributions in the field of Dermatology:</p>
+            <ul>
+                <li><strong>Meghana KB</strong>, et al. (2025). "Efficacy of Combination Therapy in Moderate to Severe Acne Vulgaris." <em>Indian Journal of Dermatology</em>.</li>
+                <li><strong>Meghana KB</strong> (2024). "Clinical Profile and Management of Melasma in Indian Skin." <em>Journal of Cutaneous and Aesthetic Surgery</em>.</li>
+                <li><strong>Meghana KB</strong>, et al. (2023). "Role of Platelet-Rich Plasma in Androgenetic Alopecia." <em>International Journal of Trichology</em>.</li>
+            </ul>
+        </section>
+
+        <section id="current-work">
+            <h2>Current Practice</h2>
+            <p>Currently focused on delivering advanced dermatological care and cosmetic treatments:</p>
+            <ul>
+                <li><strong>Clinical Practice:</strong> Diagnosis and management of skin disorders, acne, eczema, psoriasis, and pigmentary conditions.</li>
+                <li><strong>Cosmetic Dermatology:</strong> Chemical peels, laser treatments, anti-aging procedures, and PRP therapy.</li>
+                <li><strong>Patient Care:</strong> Personalized treatment plans with emphasis on long-term skin health and patient education.</li>
+            </ul>
+        </section>
+
+        <section id="insights">
+            <h2>Latest Thoughts</h2>
+            <p>Insights on current trends in Dermatology:</p>
+            
+            <div class="thought-box">
+                <h4>On AI Integration in Daily Diagnostics</h4>
+                <p>"AI is a brilliant co-pilot in the clinic. Using machine learning to analyze dermoscopic images helps us flag subtle, early-stage malignancies that are easy to miss during a busy day. It doesn't replace clinical intuition, but it acts as an invaluable safety net for patient safety."</p>
+            </div>
+            
+            <div class="thought-box">
+                <h4>On Targeted Microbiome Therapeutics</h4>
+                <p>"For years, treating chronic conditions like acne and eczema meant throwing harsh antibiotics at the skin. The future is microbiome engineering—using topicals that selectively eliminate 'bad' bacteria while feeding the 'good' to naturally rebuild a broken skin barrier."</p>
+            </div>
+            
+            <div class="thought-box">
+                <h4>On Next-Gen Laser Coring & Resurfacing</h4>
+                <p>"The latest lasers remove microscopic columns of aged skin with almost zero thermal damage. This means achieving tightening effects with significantly less downtime and safer results for all skin types."</p>
+            </div>
+            
+            <div class="thought-box">
+                <h4>On Regenerative Aesthetics</h4>
+                <p>"We are moving toward repairing skin at a cellular level. Using topical exosomes and growth factors after microneedling commands the skin to heal itself, giving vibrant, natural results."</p>
+            </div>
+            
+            <div class="thought-box">
+                <h4>On Skin Barrier Health</h4>
+                <p>"In today's polluted environments and high-stress lifestyles, protecting the skin barrier is paramount. True skin health starts with protection, not over-exfoliation."</p>
+            </div>
+            
+            <div class="thought-box">
+                <h4>The Rise of Cosmetic Dermatology</h4>
+                <p>"Modern patients seek a blend of medical health and aesthetic confidence. When done ethically, cosmetic procedures significantly boost a patient's overall quality of life."</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Dr. Meghana KB. All rights reserved. | This website is for informational purposes only and does not constitute medical advice.</p>
+    </footer>
+</body>
+</html>
