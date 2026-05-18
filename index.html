@@ -19,6 +19,8 @@
             padding: 0;
             background-color: #fff;
         }
+
+        /* Fully Transparent Navigation */
         header {
             background-color: transparent !important;
             color: #fff;
@@ -47,6 +49,8 @@
             color: var(--secondary-color);
             transform: translateY(-3px);
         }
+
+        /* Hero Backdrop */
         .hero-backdrop {
             height: 580px;
             background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
@@ -57,6 +61,10 @@
             text-align: center;
             color: white;
             margin-top: 80px;
+        }
+        .hero-content {
+            max-width: 900px;
+            padding: 0 20px;
         }
         .hero-content h1 {
             font-size: 3.2rem;
@@ -75,6 +83,7 @@
             margin-bottom: 15px;
             font-weight: 600;
         }
+
         .container {
             max-width: 1100px;
             margin: 3rem auto;
@@ -83,6 +92,9 @@
         section {
             padding: 2.5rem 0;
             border-bottom: 1px solid #e9ecef;
+        }
+        section:last-child {
+            border-bottom: none;
         }
         h2 {
             color: var(--primary-color);
@@ -112,6 +124,7 @@
             padding: 1.5rem 0;
             margin-top: 3rem;
         }
+
         @media (max-width: 768px) {
             .hero-backdrop { height: 460px; margin-top: 70px; }
             .hero-content h1 { font-size: 2.5rem; }
@@ -120,6 +133,7 @@
 </head>
 <body>
 
+    <!-- Navigation -->
     <header>
         <nav>
             <a href="/dermatology/#about">About Me</a>
@@ -130,16 +144,17 @@
         </nav>
     </header>
 
+    <!-- Hero Backdrop -->
     <section class="hero-backdrop">
         <div class="hero-content">
-            <h1>Dr. Meghana KB <span class="degree">M.D, DNB</span></h1>
+            <h1>Dr. Meghana KB <span class="degree">MD, DNB</span></h1>
             <p class="subtitle">Consultant Dermatologist & Skin Specialist</p>
         </div>
     </section>
 
     <div class="container">
 
-        <!-- Finalized About Me Section -->
+        <!-- Updated About Me -->
         <section id="about">
             <h2>About Me</h2>
             <div style="display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;">
@@ -154,7 +169,7 @@
             </div>
         </section>
 
-        <!-- Education Section -->
+        <!-- Education -->
         <section id="education">
             <h2>Education & Achievements</h2>
             <h3>Education & Training</h3>
@@ -171,8 +186,63 @@
             </ul>
         </section>
 
-        <!-- You can add Publications, Current Work, and Insights sections here as needed -->
+        <!-- Publications -->
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            <p>A selection of research papers and contributions in the field of Dermatology:</p>
+            <ul>
+                <li><strong>Meghana KB</strong>, et al. (2025). "Efficacy of Combination Therapy in Moderate to Severe Acne Vulgaris." <em>Indian Journal of Dermatology</em>.</li>
+                <li><strong>Meghana KB</strong> (2024). "Clinical Profile and Management of Melasma in Indian Skin." <em>Journal of Cutaneous and Aesthetic Surgery</em>.</li>
+                <li><strong>Meghana KB</strong>, et al. (2023). "Role of Platelet-Rich Plasma in Androgenetic Alopecia." <em>International Journal of Trichology</em>.</li>
+            </ul>
+        </section>
 
+        <!-- Current Work -->
+        <section id="current-work">
+            <h2>Current Practice</h2>
+            <p>Currently focused on delivering advanced dermatological care and cosmetic treatments:</p>
+            <ul>
+                <li><strong>Clinical Practice:</strong> Diagnosis and management of skin disorders, acne, eczema, psoriasis, and pigmentary conditions.</li>
+                <li><strong>Cosmetic Dermatology:</strong> Chemical peels, laser treatments, anti-aging procedures, and PRP therapy.</li>
+                <li><strong>Patient Care:</strong> Personalized treatment plans with emphasis on long-term skin health and patient education.</li>
+            </ul>
+        </section>
+
+        <!-- Latest Thoughts -->
+        <section id="insights">
+            <h2>Latest Thoughts</h2>
+            <p>Insights on current trends in Dermatology:</p>
+            
+            <div class="thought-box">
+                <h4>On AI Integration in Daily Diagnostics</h4>
+                <p>"AI is a brilliant co-pilot in the clinic. Using machine learning to analyze dermoscopic images helps us flag subtle, early-stage malignancies that are easy to miss during a busy day. It doesn't replace clinical intuition, but it acts as an invaluable safety net for patient safety."</p>
+            </div>
+            
+            <div class="thought-box">
+                <h4>On Targeted Microbiome Therapeutics</h4>
+                <p>"For years, treating chronic conditions like acne and eczema meant throwing harsh antibiotics at the skin. The future is microbiome engineering—using topicals that selectively eliminate 'bad' bacteria while feeding the 'good' to naturally rebuild a broken skin barrier."</p>
+            </div>
+            
+            <div class="thought-box">
+                <h4>On Next-Gen Laser Coring & Resurfacing</h4>
+                <p>"The latest lasers remove microscopic columns of aged skin with almost zero thermal damage. This means achieving tightening effects with significantly less downtime and safer results for all skin types."</p>
+            </div>
+            
+            <div class="thought-box">
+                <h4>On Regenerative Aesthetics</h4>
+                <p>"We are moving toward repairing skin at a cellular level. Using topical exosomes and growth factors after microneedling commands the skin to heal itself, giving vibrant, natural results."</p>
+            </div>
+            
+            <div class="thought-box">
+                <h4>On Skin Barrier Health</h4>
+                <p>"In today's polluted environments and high-stress lifestyles, protecting the skin barrier is paramount. True skin health starts with protection, not over-exfoliation."</p>
+            </div>
+            
+            <div class="thought-box">
+                <h4>The Rise of Cosmetic Dermatology</h4>
+                <p>"Modern patients seek a blend of medical health and aesthetic confidence. When done ethically, cosmetic procedures significantly boost a patient's overall quality of life."</p>
+            </div>
+        </section>
     </div>
 
     <footer>
