@@ -11,6 +11,11 @@
             --text-color: #333;
             --bg-light: #f8f9fa;
         }
+        
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
@@ -20,114 +25,208 @@
             background-color: #fff;
         }
 
-        /* Fully Transparent Navigation */
+        /* Responsive Navigation Layer */
         header {
-            background-color: transparent !important;
-            color: #fff;
-            padding: 1.2rem 0;
+            background-color: rgba(44, 62, 80, 0.95); /* Solid backup for mobile reading */
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
+        
+        @media (min-width: 769px) {
+            header {
+                background-color: transparent !important;
+                box-shadow: none;
+            }
+        }
+
         nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            flex-wrap: wrap;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0.5rem;
         }
+
         nav a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
-            padding: 0.6rem 1.1rem;
+            padding: 0.6rem 0.9rem;
             transition: all 0.3s;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-            font-size: 1.02rem;
-        }
-        nav a:hover {
-            color: var(--secondary-color);
-            transform: translateY(-3px);
+            font-size: 0.95rem;
+            white-space: nowrap;
         }
 
-        /* Hero Backdrop */
+        @media (min-width: 769px) {
+            nav {
+                justify-content: space-around;
+                padding: 1.2rem 0;
+            }
+            nav a {
+                text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+                font-size: 1.02rem;
+            }
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Dynamic Hero Section */
         .hero-backdrop {
-            height: 580px;
-            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+            min-height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
                         url('Header.jpeg') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
-            margin-top: 80px;
+            padding: 80px 20px 40px 20px;
         }
+
         .hero-content {
             max-width: 900px;
-            padding: 0 20px;
+            width: 100%;
         }
+
         .hero-content h1 {
-            font-size: 3.2rem;
-            margin: 0 0 8px 0;
-            text-shadow: 0 3px 15px rgba(0,0,0,0.7);
+            font-size: 2.5rem;
+            margin: 0 0 10px 0;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.6);
+            line-height: 1.2;
         }
+
         .hero-content .degree {
-            font-size: 1.45rem;
-            margin: 0 0 12px 0;
+            display: block;
+            font-size: 1.2rem;
+            margin-top: 5px;
             font-weight: 500;
             opacity: 0.95;
         }
+
         .hero-content .subtitle {
-            font-size: 1.55rem;
+            font-size: 1.25rem;
             color: #ffd7d7;
             margin-bottom: 15px;
             font-weight: 600;
         }
 
+        @media (min-width: 768px) {
+            .hero-backdrop { height: 580px; padding: 0; }
+            .hero-content h1 { font-size: 3.5rem; }
+            .hero-content .degree { display: inline; font-size: 1.6rem; margin-left: 10px; }
+            .hero-content .subtitle { font-size: 1.65rem; }
+        }
+
+        /* Main Container Layout */
         .container {
             max-width: 1100px;
-            margin: 3rem auto;
-            padding: 0 1.5rem;
+            margin: 1.5rem auto;
+            padding: 0 1.2rem;
         }
+
+        @media (min-width: 768px) {
+            .container { margin: 3rem auto; padding: 0 1.5rem; }
+        }
+
         section {
-            padding: 2.5rem 0;
+            padding: 2rem 0;
             border-bottom: 1px solid #e9ecef;
+            scroll-margin-top: 120px; /* Prevents header from hiding anchors when clicking menu links */
         }
+
         section:last-child {
             border-bottom: none;
         }
+
         h2 {
             color: var(--primary-color);
             border-left: 5px solid var(--secondary-color);
-            padding-left: 10px;
+            padding-left: 12px;
             margin-bottom: 1.5rem;
+            font-size: 1.75rem;
         }
+
+        /* Flexbox Stack Adjustment for Mobile */
+        .about-layout {
+            display: flex; 
+            align-items: center; 
+            gap: 2rem; 
+            flex-direction: column-reverse; /* Puts text first on mobile, photo second */
+        }
+
         .profile-img {
-            width: 280px;
-            height: 280px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid #e9ecef;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
+
+        @media (min-width: 768px) {
+            .about-layout { flex-direction: row; gap: 3rem; }
+            .profile-img { width: 280px; height: 280px; }
+            h2 { font-size: 2rem; }
+        }
+
+        /* Modernized List Styling */
+        ul {
+            padding-left: 1.2rem;
+        }
+        
+        li {
+            margin-bottom: 0.6rem;
+        }
+
+        /* Thought Cards Grid & Spacing */
+        .thought-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .thought-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        }
+
         .thought-box {
             background-color: var(--bg-light);
             border-radius: 8px;
-            padding: 1.5rem;
-            margin-top: 1rem;
+            padding: 1.25rem;
             border-left: 4px solid var(--secondary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
+
+        .thought-box h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .thought-box p {
+            margin: 0;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
         footer {
             background-color: var(--primary-color);
             color: #fff;
             text-align: center;
-            padding: 1.5rem 0;
+            padding: 1.5rem 1rem;
             margin-top: 3rem;
-        }
-
-        @media (max-width: 768px) {
-            .hero-backdrop { height: 460px; margin-top: 70px; }
-            .hero-content h1 { font-size: 2.5rem; }
+            font-size: 0.9rem;
         }
     </style>
 </head>
@@ -136,34 +235,37 @@
     <!-- Navigation -->
     <header>
         <nav>
-            <a href="/dermatology/#about">About Me</a>
-            <a href="/dermatology/#education">Education & Achievements</a>
-            <a href="/dermatology/#publications">Publications</a>
-            <a href="/dermatology/#current-work">Current Work</a>
-            <a href="/dermatology/#insights">Latest Thoughts</a>
+            <a href="#about">About Me</a>
+            <a href="#education">Education</a>
+            <a href="#publications">Publications</a>
+            <a href="#current-work">Current Work</a>
+            <a href="#insights">Latest Thoughts</a>
         </nav>
     </header>
 
     <!-- Hero Backdrop -->
     <section class="hero-backdrop">
         <div class="hero-content">
-            <h1>Dr. Meghana KB <span class="degree">MD, DNB</span></h1>
+            <h1>Dr. Meghana KB <span class="degree">M.D, DNB</span></h1>
             <p class="subtitle">Consultant Dermatologist & Skin Specialist</p>
         </div>
     </section>
 
     <div class="container">
 
-        <!-- Updated About Me -->
+        <!-- About Me -->
         <section id="about">
             <h2>About Me</h2>
-            <div style="display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;">
-                <div style="flex: 2; min-width: 300px;">
+            <div class="about-layout">
+                <div style="flex: 2; min-width: 100%;">
                     <p>Welcome to my professional profile. With extensive experience in clinical and cosmetic dermatology, I am committed to delivering personalized and compassionate care using the latest advancements in dermatological science.</p>
                     <p>My practice focuses on accurate diagnosis and effective treatment of various skin, hair, and nail disorders, while also helping patients achieve their aesthetic goals through safe and modern procedures. I strongly believe in patient education and creating customized treatment plans tailored to individual needs and skin types.</p>
-                    <p><strong>Contact:</strong> dr.meghanakb@gmail.com | <strong>Clinic:</strong> Shree Health Care Centre, Bengaluru</p>
+                    <p style="background: #fff8f8; padding: 10px; border-radius: 5px; border: 1px solid #ffe3e3;">
+                        <strong>Contact:</strong> dr.meghanakb@gmail.com <br style="display:block; margin-bottom:4px;"> 
+                        <strong>Clinic:</strong> Shree Health Care Centre, Bengaluru
+                    </p>
                 </div>
-                <div style="flex: 1; min-width: 250px; text-align: center; order: 2;">
+                <div style="flex: 1; text-align: center;">
                     <img src="Dr Meghana Photo.jpg" alt="Dr. Meghana KB" class="profile-img">
                 </div>
             </div>
@@ -213,34 +315,36 @@
             <h2>Latest Thoughts</h2>
             <p>Insights on current trends in Dermatology:</p>
             
-            <div class="thought-box">
-                <h4>On AI Integration in Daily Diagnostics</h4>
-                <p>"AI is a brilliant co-pilot in the clinic. Using machine learning to analyze dermoscopic images helps us flag subtle, early-stage malignancies that are easy to miss during a busy day. It doesn't replace clinical intuition, but it acts as an invaluable safety net for patient safety."</p>
-            </div>
-            
-            <div class="thought-box">
-                <h4>On Targeted Microbiome Therapeutics</h4>
-                <p>"For years, treating chronic conditions like acne and eczema meant throwing harsh antibiotics at the skin. The future is microbiome engineering—using topicals that selectively eliminate 'bad' bacteria while feeding the 'good' to naturally rebuild a broken skin barrier."</p>
-            </div>
-            
-            <div class="thought-box">
-                <h4>On Next-Gen Laser Coring & Resurfacing</h4>
-                <p>"The latest lasers remove microscopic columns of aged skin with almost zero thermal damage. This means achieving tightening effects with significantly less downtime and safer results for all skin types."</p>
-            </div>
-            
-            <div class="thought-box">
-                <h4>On Regenerative Aesthetics</h4>
-                <p>"We are moving toward repairing skin at a cellular level. Using topical exosomes and growth factors after microneedling commands the skin to heal itself, giving vibrant, natural results."</p>
-            </div>
-            
-            <div class="thought-box">
-                <h4>On Skin Barrier Health</h4>
-                <p>"In today's polluted environments and high-stress lifestyles, protecting the skin barrier is paramount. True skin health starts with protection, not over-exfoliation."</p>
-            </div>
-            
-            <div class="thought-box">
-                <h4>The Rise of Cosmetic Dermatology</h4>
-                <p>"Modern patients seek a blend of medical health and aesthetic confidence. When done ethically, cosmetic procedures significantly boost a patient's overall quality of life."</p>
+            <div class="thought-grid">
+                <div class="thought-box">
+                    <h4>On AI Integration in Daily Diagnostics</h4>
+                    <p>"AI is a brilliant co-pilot in the clinic. Using machine learning to analyze dermoscopic images helps us flag subtle, early-stage malignancies that are easy to miss during a busy day. It doesn't replace clinical intuition, but it acts as an invaluable safety net for patient safety."</p>
+                </div>
+                
+                <div class="thought-box">
+                    <h4>On Targeted Microbiome Therapeutics</h4>
+                    <p>"For years, treating chronic conditions like acne and eczema meant throwing harsh antibiotics at the skin. The future is microbiome engineering—using topicals that selectively eliminate 'bad' bacteria while feeding the 'good' to naturally rebuild a broken skin barrier."</p>
+                </div>
+                
+                <div class="thought-box">
+                    <h4>On Next-Gen Laser Coring & Resurfacing</h4>
+                    <p>"The latest lasers remove microscopic columns of aged skin with almost zero thermal damage. This means achieving tightening effects with significantly less downtime and safer results for all skin types."</p>
+                </div>
+                
+                <div class="thought-box">
+                    <h4>On Regenerative Aesthetics</h4>
+                    <p>"We are moving toward repairing skin at a cellular level. Using topical exosomes and growth factors after microneedling commands the skin to heal itself, giving vibrant, natural results."</p>
+                </div>
+                
+                <div class="thought-box">
+                    <h4>On Skin Barrier Health</h4>
+                    <p>"In today's polluted environments and high-stress lifestyles, protecting the skin barrier is paramount. True skin health starts with protection, not over-exfoliation."</p>
+                </div>
+                
+                <div class="thought-box">
+                    <h4>The Rise of Cosmetic Dermatology</h4>
+                    <p>"Modern patients seek a blend of medical health and aesthetic confidence. When done ethically, cosmetic procedures significantly boost a patient's overall quality of life."</p>
+                </div>
             </div>
         </section>
     </div>
